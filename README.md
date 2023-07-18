@@ -14,21 +14,21 @@ To download ANLI MNLI SNLI dataset open https://github.com/facebookresearch/anli
 
 The code for this project was written in Python 3. The required packages are listed in `requirements.txt` and can be installed with pip:
 
-```bash
-pip install -r requirements.txt
+
+```pip install -r requirements.txt```
 
 ## Usage
 
 Here's a step-by-step guide on how to use this repository:
 
-### 1. Clone the Repository
+### Clone the Repository
 
 First, clone this repository to your local machine using the following command in your terminal:
-### 2. Change directory to the cloed repository
-cd Contradiction-in-Peer-Review
+### Change directory to the cloned repository
+```cd Contradiction-in-Peer-Review```
 
-### 2. Train the Model using the below command
-
+### Train the Model using the below command
+```
 python3 src/training_scratch3.py \
     --model_class_name "xlnet-large" \
     -n 1 \
@@ -46,12 +46,13 @@ python3 src/training_scratch3.py \
     --eval_frequency 2000 \
     --experiment_name "xlnet-large(Our)" \
     --epochs 10
-
+```
 Alternatively, You can run the below command for training:
-sh train.sh
+``` sh train.sh ```
 
 You can change the model to another model( Example changing the xlnet-large to roberta-large )
 The trained weights will be saved in a folder named xlnet-large(Our)
 
+## Pretrained Weights
 We will release the pre-trained weights upon acceptance
 
