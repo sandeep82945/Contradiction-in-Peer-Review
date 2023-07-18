@@ -6,9 +6,9 @@ The efficacy of the scientific publishing enterprise fundamentally rests on the 
 
 ## Repository Structure
 
-- `data/`: This directory contains the datasets used in the research. 
+- `data/`: This directory contains the annotated datasets used in the research. 
+To download ANLI MNLI SNLI dataset open https://github.com/facebookresearch/anli and download and keep in the data folder.
 - `code/`: This directory contains all the code used to analyze the data and generate the results. The code is broken down into multiple scripts according to their functionality.
-- `results/`: This directory contains the output of our data analysis. This includes figures, tables, and other results.
 
 ## Requirements
 
@@ -24,6 +24,34 @@ Here's a step-by-step guide on how to use this repository:
 ### 1. Clone the Repository
 
 First, clone this repository to your local machine using the following command in your terminal:
+### 2. Change directory to the cloed repository
+cd Contradiction-in-Peer-Review
 
-We will add these details after the acceptance.
+### 2. Train the Model using the below command
+
+python3 src/training_scratch3.py \
+    --model_class_name "xlnet-large" \
+    -n 1 \
+    -g 1 \
+    --single_gpu \
+    -nr 0 \
+    --max_length 280 \
+    --gradient_accumulation_steps 1 \
+    --per_gpu_train_batch_size 16 \
+    --per_gpu_eval_batch_size 16 \
+    --save_prediction \
+    --train_data snli_train:none,mnli_train:none \
+    --train_weights 1,1 \
+    --eval_data snli_dev:none \
+    --eval_frequency 2000 \
+    --experiment_name "xlnet-large(Our)" \
+    --epochs 10
+
+Alternatively, You can run the below command for training:
+sh train.sh
+
+You can change the model to another model( Example changing the xlnet-large to roberta-large )
+The trained weights will be saved in a folder named xlnet-large(Our)
+
+We will release the pre-trained weights upon acceptance
 
