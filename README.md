@@ -1,4 +1,7 @@
 # Contradiction-in-Peer-Review
+Official Code for EMNLP 2023 Paper: When Reviewers Lock Horns: Finding Disagreements in Scientific Peer Reviews
+
+https://aclanthology.org/2023.emnlp-main.1038/
 
 The efficacy of the scientific publishing enterprise fundamentally rests on the strength of the peer review process. The expert reviewers' assessments significantly influence an editor's/chair's final decision. Editors/Chairs identify disagreements and varied opinions among reviewers and try to reach a consensus to make a fair and informed decision on the fate of a submission. However, with the escalating number of submissions requiring review, the editor experiences a significant workload. Here in this work, we introduce a novel task of automatically identifying contradictions between reviewers' comments on the same article. To this end, we introduce ContraSciView, a review-pair contradiction dataset based on around 8.5k papers(with around 28k review pairs containing nearly 50k review pair comments) from the open-access ICLR and NeurIPS conference reviews. We then establish a baseline model that detects contradictory comments from review pairs. Our investigations reveal both opportunities and challenges in detecting contradictions in peer reviews.
 
@@ -54,5 +57,5 @@ You can change the model to another model( Example changing the xlnet-large to r
 The trained weights will be saved in a folder named xlnet-large(Our)
 
 ## Pretrained Weights
-We will release the pre-trained weights upon acceptance
+We will release the pre-trained weights soon
 
